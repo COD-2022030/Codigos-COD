@@ -54,7 +54,7 @@ sensorCR7.begin();   //Se inicia el sensor
 LG.init(); 
 LG.backlight(); 
 LG.createChar(1, cel);
-LG.createChar(1, far);
+LG.createChar(2, far);
 }
  
 void loop() {
@@ -70,7 +70,7 @@ int medicion1(){
 
 int medicion2(){
   sensorCR7.requestTemperatures();   //Se envía el comando para leer la temperatura
-  float temp1= sensorCR7.getTempCByIndex(0); //Se obtiene la temperatura en ºF 
+  float temp1= sensorCR7.getTempFByIndex(0); //Se obtiene la temperatura en ºF 
   return temp1;
   }
   

@@ -16,7 +16,7 @@
   
 //Constructores
 OneWire ourWire(2);                //Se establece el pin 2  como el pin que utilizaremos para el protocolo OneWire
-DallasTemperature sensors(&ourWire); //Se declara una objeto para nuestro sensor
+DallasTemperature sensorCR7(&ourWire); //Se declara una objeto para nuestro sensor
 LiquidCrystal_I2C LG(0x27, 16, 2);
 int medicion1();
 int medicion2();
@@ -26,7 +26,7 @@ int fahrenheit;
 
 void setup() {
 delay(1000);
-sensors.begin();   //Se inicia el sensor
+sensorCR7.begin();   //Se inicia el sensor
 LG.init(); 
 LG.backlight(); 
 }
@@ -36,14 +36,14 @@ lcd_funcion();
 }
 
 int medicion1(){
-  sensors.requestTemperatures();   //Se envía el comando para leer la temperatura
-  float temp= sensors.getTempCByIndex(0); //Se obtiene la temperatura en ºC  
+  sensorCR7.requestTemperatures();   //Se envía el comando para leer la temperatura
+  float temp= sensorCR7.getTempCByIndex(0); //Se obtiene la temperatura en ºC  
   return temp;
   }
 
 int medicion2(){
-  sensors.requestTemperatures();   //Se envía el comando para leer la temperatura
-  float temp1= sensors.getTempCByIndex(0); //Se obtiene la temperatura en ºF 
+  sensorCR7.requestTemperatures();   //Se envía el comando para leer la temperatura
+  float temp1= sensorCR7.getTempCByIndex(0); //Se obtiene la temperatura en ºF 
   return temp1;
   }
   

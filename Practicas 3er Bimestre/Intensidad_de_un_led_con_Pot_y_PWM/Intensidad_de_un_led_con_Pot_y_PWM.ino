@@ -18,6 +18,6 @@ void setup() {
  
 void loop() {
   int intensidad; 
-  intensidad = map(analogRead(POT), 0, 1023, 0, 255);
+ intensidad = map(analogRead(POT), 0, 1023, 0, 255);
   analogWrite(LED,intensidad); 
 }

@@ -59,9 +59,9 @@ void loop() {
   
 if(lectura == 0){
   lecturaColor();
-  if(resultado_verde > resultado_rojo && resultado_verde > resultado_azul){
-    Serial.println("verde");
-  for(int i = 0; i<280; i++){
+  if(resultado_rojo > resultado_verde && resultado_rojo > resultado_azul){
+    Serial.println("rojo");
+  for(int i = 0; i<380; i++){
   control(1,1,0,0);
   delay(10);
   control(0,1,1,0);

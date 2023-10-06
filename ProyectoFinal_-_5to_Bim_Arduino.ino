@@ -22,7 +22,6 @@ void loop() {
 
     switch (comunicacion) {
       case '1':
-        Serial.println("medidor de  voltaje");
        float voltaje = (float)25 * analogRead(VoltajePin) / 1023;
       Serial.print("Voltaje medido = ");
       Serial.println(voltaje);
@@ -32,7 +31,6 @@ void loop() {
         break;
         
       case'2':
-      Serial.println("medidor de resistencia");
  sumaDeResistencias = 0.0;
   for (int i = 0; i < promedio; i++) {
     int estado = analogRead(Ohms);
@@ -50,7 +48,6 @@ void loop() {
       break;
 
       case'3':
-   Serial.println("medidor de corriente");
    float VoltajeSensor = analogRead(CorrientePin)*(5.0/1023);  // Lee el valor analógico del sensor
    float corriente = (VoltajeSensor - 2.5)/sensibilidad ;    // Convierte el valor en milivoltios
    Serial.print("Corriente: ");

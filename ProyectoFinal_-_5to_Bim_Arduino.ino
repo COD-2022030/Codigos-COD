@@ -40,7 +40,6 @@ void loop() {
     delay(10); // Pequeña pausa entre lecturas para evitar ruido
   }
    float resistenciapromedio = sumaDeResistencias / promedio;
-   Serial.print("Resistencia desconocida: ");
    Serial.println(sumaDeResistencias);
    Serial1.print(sumaDeResistencias,2);
    Serial1.print(' ');
